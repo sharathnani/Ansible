@@ -17,6 +17,9 @@ $ sudo apt-add-repository ppa:ansible/ansible
 
 $ sudo apt-get update 
 
+$ sudo apt-get install ansible
+
+
 # Ansible YAML
 Ansible uses YAML syntax for expressing Ansible playbooks.  Ansible uses YAML because it is very easy for humans to understand, read and write when compared to other data formats like XML and JSON.
 
@@ -26,5 +29,47 @@ Syntax:
 ansible [pattern] -m [module] -a "[arguments]" [options]
 ansible webservers -m shell -a "free -h" --become
 
-$ sudo apt-get install ansible
+![image](https://github.com/user-attachments/assets/7f66e9cd-d16e-4d0f-a1ee-0c50731edcb3)
 
+Common Use Cases
+
+Ping Hosts:
+ansible all -m ping
+
+Check Disk Space:
+ansible webservers -m shell -a "df -h"
+
+Restart Services:
+ansible dbservers -m service -a "name=mysql state=restarted" --become
+
+Files:
+
+ansible all -m  -a "src=/local/file.txt dest=/remote/file.txt"
+
+Run Shell Command
+
+ansible all -m shell -a "uptime"
+
+Install a Package (Using yum on RHEL/CentOS)
+
+ansible webservers -m yum -a "name=httpd state=present"
+
+Start a Service
+
+ansible webservers -m service -a "name=httpd state=started"
+
+a File
+
+ansible all -m  -a "src=/etc/hosts dest=/tmp/hosts"
+
+Check Disk Space
+
+ansible all -m shell -a "df -h"
+
+Create a User
+
+ansible all -m user -a "name=john state=present"
+
+Change File Permissions
+
+ansible all -m file -a "path=/tmp/testfile mode=0644"
