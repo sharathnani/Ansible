@@ -1,4 +1,5 @@
 #Deploy a Static Website
+---
 - name: Deploy static site
   hosts: webservers
   become: yes
