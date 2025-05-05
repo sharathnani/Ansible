@@ -17,5 +17,14 @@ $ sudo apt-add-repository ppa:ansible/ansible
 
 $ sudo apt-get update 
 
+# Ansible YAML
+Ansible uses YAML syntax for expressing Ansible playbooks.  Ansible uses YAML because it is very easy for humans to understand, read and write when compared to other data formats like XML and JSON.
+
+# Ansible ad-hoc commands
+Ad-hoc commands are one-liners for executing tasks on remote hosts without writing a playbook.
+Syntax:
+ansible [pattern] -m [module] -a "[arguments]" [options]
+ansible webservers -m shell -a "free -h" --become
+
 $ sudo apt-get install ansible
 
