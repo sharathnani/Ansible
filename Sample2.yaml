@@ -1,0 +1,9 @@
+#Deploy a Static Website
+- name: Deploy static site
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Copy index.html
+      copy:
+        src: /home/pavani/index.html
+        dest: /var/www/html/index.html
