@@ -1,0 +1,12 @@
+#Deploy Docker Container
+- name: Run Docker container
+  hosts: docker_hosts
+  become: yes
+  tasks:
+    - name: Run nginx container
+      docker_container:
+        name: nginx
+        image: nginx:latest
+        state: started
+        ports:
+          - "80:80"
