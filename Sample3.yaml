@@ -1,0 +1,14 @@
+#Create a User with SSH Key
+- name: Add user with SSH key
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create user devops
+      user:
+        name: devops
+        state: present
+
+    - name: Add SSH key for devops
+      authorized_key:
+        user: devops
+        key: "{{ lookup('file', '/home/pavani/.ssh/id_rsa.pub') }}"
