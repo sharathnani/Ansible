@@ -1,0 +1,10 @@
+#Start and Enable Apache Service
+- name: Start and enable Apache
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Ensure apache2 is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
