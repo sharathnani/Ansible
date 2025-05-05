@@ -10,8 +10,12 @@ Ansible works by connecting to your nodes and pushing out small programs, called
 
 # Installation through Apt on Ubuntu Machine
 $ sudo apt-get update 
+
 $ sudo apt-get install software-properties-common 
+
 $ sudo apt-add-repository ppa:ansible/ansible 
+
 $ sudo apt-get update 
+
 $ sudo apt-get install ansible
 
