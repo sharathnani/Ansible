@@ -34,12 +34,15 @@ ansible webservers -m shell -a "free -h" --become
 Common Use Cases
 
 Ping Hosts:
+
 ansible all -m ping
 
 Check Disk Space:
+
 ansible webservers -m shell -a "df -h"
 
 Restart Services:
+
 ansible dbservers -m service -a "name=mysql state=restarted" --become
 
 Files:
