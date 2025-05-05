@@ -76,3 +76,19 @@ ansible all -m user -a "name=john state=present"
 Change File Permissions
 
 ansible all -m file -a "path=/tmp/testfile mode=0644"
+
+# Ansible Playbook: 
+
+An Ansible playbook is a YAML file that defines a set of tasks, configurations, and automation workflows to be executed on remote hosts. Unlike ad-hoc commands, playbooks are reusable, idempotent, and ideal for complex, multi-step operations.
+
+Key Components:
+
+Hosts: Target servers/groups from the inventory.
+
+Tasks: Actions to perform (e.g., install packages, copy files).
+
+Handlers: Triggered tasks (e.g., restart services).
+
+Variables: Reusable values for flexibility.
+
+Roles: Reusable organizational units for large projects
