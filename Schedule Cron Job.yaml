@@ -1,0 +1,11 @@
+#Schedule Cron Job
+- name: Create a cron job
+  hosts: all
+  become: yes
+  tasks:
+    - name: Backup script daily at midnight
+      cron:
+        name: "Daily backup"
+        minute: "0"
+        hour: "0"
+        job: "/usr/local/bin/backup.sh"
