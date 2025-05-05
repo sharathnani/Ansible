@@ -1,4 +1,5 @@
 #Create a User with SSH Key
+---
 - name: Add user with SSH key
   hosts: all
   become: yes
