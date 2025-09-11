@@ -1,0 +1,14 @@
+#CI/CD Pipeline Integration
+
+#Use Case: Trigger Jenkins jobs after deployment.
+
+---
+- name: Notify Jenkins on Deployment Success
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Trigger Jenkins Job
+      uri:
+        url: "http://jenkins.example.com/job/deploy/build?token=DEPLOY_TOKEN"
+        method: GET
+        status_code: 201
